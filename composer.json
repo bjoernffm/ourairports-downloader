@@ -1,0 +1,28 @@
+{
+    "name": "bjoernffm/ourairports-downloader",
+    "description": "A downloader for ourairports.com airport data",
+    "keywords": ["downloader","airport", "ouraiports", "aviation"],
+    "homepage": "https://github.com/bjoernffm/ourairports-downloader",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Björn Ebbrecht",
+            "email": "bjoern.ebbrecht@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "ramsey/uuid": "^3.8",
+        "guzzlehttp/guzzle": "^6.3",
+        "league/csv": "^9.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "bjoernffm\\ourAirportsDownloader\\": "src/"
+        }
+    }
+}
