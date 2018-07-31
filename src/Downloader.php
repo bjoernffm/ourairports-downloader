@@ -77,15 +77,15 @@ class Downloader
         
         $csv = Reader::createFromPath($return['airports']['file'], 'r');
         $csv->setHeaderOffset(0);
-        $result['airports'] = $csv->getRecords();
+        $result['airports'] = $csv;
         
         $csv = Reader::createFromPath($return['airport-frequencies']['file'], 'r');
         $csv->setHeaderOffset(0);
-        $result['airport-frequencies'] = $csv->getRecords();
+        $result['airport-frequencies'] = $csv;
         
         $csv = Reader::createFromPath($return['runways']['file'], 'r');
         $csv->setHeaderOffset(0);
-        $result['runways'] = $csv->getRecords();
+        $result['runways'] = $csv;
         
         return $result;
     }

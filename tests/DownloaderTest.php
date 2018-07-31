@@ -29,11 +29,14 @@ final class DownloaderTest extends TestCase
     {
         $downloader = new Downloader();
         $result = $downloader->run();
-        
-        
-        $this->assertInstanceOf(Iterator::class, $result['airports']);
-        $this->assertInstanceOf(Iterator::class, $result['airport-frequencies']);
-        $this->assertInstanceOf(Iterator::class, $result['runways']);
+
+        $this->assertInstanceOf(IteratorAggregate::class, $result['airports']);
+        $this->assertInstanceOf(IteratorAggregate::class, $result['airport-frequencies']);
+        $this->assertInstanceOf(IteratorAggregate::class, $result['runways']);
+
+        $this->assertGreaterThan(0, count($result['airports']));
+        $this->assertGreaterThan(0, count($result['airport-frequencies']));
+        $this->assertGreaterThan(0, count($result['runways']));
     }
     
     public function testDownloadFail()
